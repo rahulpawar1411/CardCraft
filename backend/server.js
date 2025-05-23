@@ -1,4 +1,5 @@
-const dotenv = require("dotenv").config();;
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use("/api/cards", cardRoutes);
 
 // Connect DB and Start Server
-mongoose.connect("mongodb://127.0.0.1:27017/student_cards")
+mongoose.connect("mongodb+srv://rpawar141199:xm7qbYvf8NkMoreK@cluster0cardcraft.ueg9v7c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0CardCraft")
   .then(() => {
     console.log("MongoDB connected");
     app.listen(process.env.PORT, () => {
